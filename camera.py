@@ -3,14 +3,15 @@
 import cv2
 import numpy as np
 # defining face detector
-face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
-nose_cascade = cv2.CascadeClassifier("Nose18x15.xml")
-eyes_cascade = cv2.CascadeClassifier("frontalEyes35x16.xml")
-chasme = cv2.imread('glas2.png',cv2.IMREAD_UNCHANGED)
-much = cv2.imread('mustache.png',cv2.IMREAD_UNCHANGED)
+
+# face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+# nose_cascade = cv2.CascadeClassifier("Nose18x15.xml")
+# eyes_cascade = cv2.CascadeClassifier("frontalEyes35x16.xml")
+# chasme = cv2.imread('glas2.png',cv2.IMREAD_UNCHANGED)
+# much = cv2.imread('mustache.png',cv2.IMREAD_UNCHANGED)
 
 
-ds_factor=0.6
+
 class VideoCamera(object):
     def __init__(self,filter_type):
        #capturing video
@@ -23,10 +24,10 @@ class VideoCamera(object):
         self.video.release()
     def get_frame(self):
             ret, img = self.video.read()
-            if int(self.filter) ==0:
-                ret, jpeg = cv2.imencode('.jpg', img)
+            # if int(self.filter) ==0:
+            ret, jpeg = cv2.imencode('.jpg', img)
                 
-                return jpeg.tobytes()
+            return jpeg.tobytes()
 
 
         
