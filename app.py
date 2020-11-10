@@ -23,4 +23,4 @@ def video_feed():
 
 if __name__ == '__main__':
     # defining server ip address and port
-    app.run(threaded=True, port=5000)
+    app.run()
