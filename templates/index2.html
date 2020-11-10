@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Face Filters ML</title>
+  </head>
+  <body style="text-align:center;background-color:rgb(77, 0, 77)">
+  	<h1 style="color:rgb(102, 0, 102);text-align:center;background-color:rgb(255, 179, 255)">Cool Face Filters ML</h1>
+  	
+
+
+<h2 style="color:rgb(102, 0, 102);text-align:center;background-color:rgb(255, 179, 255)">select filters</h2>
+
+<table style="width:80%;background-color:rgb(255, 204, 255); margin: auto">
+  
+
+  	<th><button id='1' type="button" onclick="funct(1)">Filter 1</button></th>
+  	<th><button id='2' type="button" onclick="funct(2)">Filter 2</button></th>
+    <th><button id='3' type="button" onclick="funct(3)">Filter 3</button></th>
+  	<th><button id='4' type="button" onclick="funct(4)">Filter 4</button></th>
+  	<th><button id='5' type="button" onclick="funct(5)">Filter 5</button></th>
+  	<th><button id='6' type="button" onclick="funct(6)">Filter 6</button></th>
+    
+   </table > 
+  <div style="height:500px;background-color:rgb(255, 51, 255);margin: auto;width:50%;border:3px solid green;padding:10px;">
+    <img id="bg" src="{{ url_for('video_feed',filter_type=0) }}" >
+    <button id='refr' type="button" onclick="rfrsh()">Refresh</button>
+
+    </div>
+    <h3 style="color:rgb(102, 0, 102);text-align:right;background-color:rgb(255, 179, 255)">by:- @https://github.com/Diwakar121</h2>
+
+
+
+
+
+    <script>
+ function  funct(ft)
+{ 	console.log(ft);
+	switch(ft) {
+  case 1:
+  		document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=1) }}");
+    break;
+  case 2:
+  		document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=2) }}");
+    break;
+    case 3:
+  		document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=3) }}");
+    break;
+    case 4:
+  		document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=4) }}");
+    break;
+    case 5:
+  		document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=5) }}");
+    break;
+    case 6:
+  		document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=6) }}");
+    break;
+  default:
+    document.getElementById("bg").setAttribute("src", "{{ url_for('video_feed',filter_type=0) }}");
+}
+
+
+}
+function rfrsh(){
+	
+	location.reload();
+return false;
+}
+	</script>
+
+  </body>
+</html>
