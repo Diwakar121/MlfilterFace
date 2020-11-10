@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # rendering webpage
-    return render_template('index2.html')
+    return "Hello JI"
 
 
 def gen(camera):
