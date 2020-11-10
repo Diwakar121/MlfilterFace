@@ -1,12 +1,14 @@
 # main.py
 # import the necessary packages
 from flask import Flask, render_template, Response,request
-from camera import VideoCamera
+# from camera import VideoCamera
 app = Flask(__name__)
+
 @app.route('/')
 def index():
     # rendering webpage
-    return "Hello JI"
+    return render_template('index2.html')
+
 
 
 def gen(camera):
